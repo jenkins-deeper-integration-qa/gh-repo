@@ -1,0 +1,38 @@
+# gh-repo1 testing manually
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12, 14, 16]   # Runs tests on these node versions
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - run: npm install
+      - run: npm test
+This workflow triggers on pushes and pull requests to the main branch, and it will run the CI build across Node.js versions 12, 14, and 16. You can customize it further based on your project's needs.
+
+
+
+
+
+
+
+
+
+
+
