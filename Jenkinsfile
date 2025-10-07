@@ -7,7 +7,7 @@ pipeline {
     }
 
       tools {
-        maven 'Maven 3'  // Define your Maven installation name from Jenkins Global Tool Configuration
+        maven 'Maven 5'  // Define your Maven installation name from Jenkins Global Tool Configuration
     }
 
    
@@ -17,7 +17,7 @@ pipeline {
                 echo 'Registering the metadata'
                 echo 'Another echo to make the pipeline a bit more complex'
                 registerBuildArtifactMetadata(
-                    name: "test-artifact-cherryl",
+                    name: "test-artifact-uma",
                     version: "1.0.0",
                     type: "docker",
                     url: "http://non:1111",
